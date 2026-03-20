@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050611" />
+    <title>路子好帅</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="fx-root" aria-hidden="true">
+      <canvas id="fx-canvas"></canvas>
+      <div class="bg-orb orb--a"></div>
+      <div class="bg-orb orb--b"></div>
+      <div class="bg-orb orb--c"></div>
+      <div class="bg-noise"></div>
+      <div class="scanlines"></div>
+    </div>
+
+    <div class="app">
+      <header class="top-nav" data-reveal="up">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <span class="brand-name">AI SIGNAL</span>
+        </div>
+        <div class="nav-actions">
+          <button class="nav-link" type="button" data-scroll-to="#showcase">Modules</button>
+          <button class="nav-link" type="button" data-scroll-to="#closing">Manifesto</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="top">
+          <div class="hero-grid">
+            <div class="parallax parallax--left" data-parallax="0.18">
+              <div class="hero-left">
+                <p class="eyebrow" data-reveal="up" data-delay="60">Neural-grade presence</p>
+                <h1 class="hero-title" data-reveal="up" data-delay="120">
+                  <span class="title-line">路子</span>
+                  <span class="title-line title-gradient">好帅</span>
+                </h1>
+                <p class="hero-subtitle" data-reveal="up" data-delay="190">
+                  A cinematic experience powered by particles, light fields, and smooth motion.
+                </p>
+
+                <div class="hero-cta" data-reveal="up" data-delay="250">
+                  <button class="btn btn-primary" type="button" id="btnPulse">Begin the Pulse</button>
+                  <a class="btn btn-ghost" href="#showcase">Explore</a>
+                </div>
+
+                <div class="hero-metrics" id="metrics" data-reveal="up" data-delay="320">
+                  <div class="metric" data-metric data-from="0" data-count="98" data-suffix="%">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Coherence</div>
+                  </div>
+                  <div class="metric" data-metric data-from="0" data-count="2400" data-suffix="ms">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Latency Budget</div>
+                  </div>
+                  <div class="metric" data-metric data-from="0" data-count="60" data-suffix="fps">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Target Frames</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="parallax parallax--right" data-parallax="0.10">
+              <div class="hero-right">
+                <div class="hero-panel" data-reveal="right" data-delay="140">
+                  <div class="panel-top">
+                    <span class="chip">Realtime</span>
+                    <span class="chip chip--alt">Light Field</span>
+                  </div>
+
+                  <div class="panel-visual">
+                    <div class="orbital" aria-hidden="true">
+                      <div class="ring ring--1"></div>
+                      <div class="ring ring--2"></div>
+                      <div class="ring ring--3"></div>
+                      <div class="core-glow"></div>
+                    </div>
+
+                    <div class="panel-caption">
+                      <div class="caption-title">Move to Bend the Signal</div>
+                      <div class="caption-sub">Mouse repulsion + glow response</div>
+                    </div>
+                  </div>
+
+                  <div class="panel-bottom">
+                    <div class="meter">
+                      <div class="meter-bar" id="meterBar"></div>
+                    </div>
+                    <div class="meter-meta">
+                      <span class="meter-text" id="meterText">Signal: 0</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hero-float" aria-hidden="true">
+                  <div class="float-card float-card--a"></div>
+                  <div class="float-card float-card--b"></div>
+                  <div class="float-card float-card--c"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="showcase" id="showcase">
+          <div class="section-head" data-reveal="up" data-delay="60">
+            <h2 class="section-title">Dynamic Modules</h2>
+            <p class="section-desc">
+              Glass layers with depth, parallax, smooth reveals, and micro interactions.
+            </p>
+          </div>
+
+          <div class="card-grid" role="list">
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="110">
+              <div class="card-glow"></div>
+              <div class="card-icon">01</div>
+              <h3>Neural Deck</h3>
+              <p>Premium gradients, soft shadows, and fade + translate motion design.</p>
+              <div class="card-footer">
+                <span class="tag">Fade + Translate</span>
+                <span class="tag tag--blue">Depth</span>
+              </div>
+            </article>
+
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="170">
+              <div class="card-glow"></div>
+              <div class="card-icon">02</div>
+              <h3>Particle Lattice</h3>
+              <p>
+                A canvas field that swarms gently, repels from the cursor, and connects in motion.
+              </p>
+              <div class="card-footer">
+                <span class="tag">Canvas FX</span>
+                <span class="tag tag--blue">Additive Glow</span>
+              </div>
+            </article>
+
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="230">
+              <div class="card-glow"></div>
+              <div class="card-icon">03</div>
+              <h3>Motion Orbits</h3>
+              <p>Subtle orbital rings that feel alive, tuned for silky 60fps-like smoothness.</p>
+              <div class="card-footer">
+                <span class="tag">rAF Loop</span>
+                <span class="tag tag--blue">Micro-tilt</span>
+              </div>
+            </article>
+
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="290">
+              <div class="card-glow"></div>
+              <div class="card-icon">04</div>
+              <h3>Temporal Contrast</h3>
+              <p>Scanlines, noise texture, and light-field bloom for an expensive sci-fi finish.</p>
+              <div class="card-footer">
+                <span class="tag">Texture</span>
+                <span class="tag tag--blue">Scanlines</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="floating-strip parallax" data-parallax="0.12" aria-hidden="true">
+            <div class="strip-item">VECTOR SIGNAL</div>
+            <div class="strip-item">LIGHT FIELD</div>
+            <div class="strip-item">NEURAL GLASS</div>
+            <div class="strip-item">FUTURE INTERFACE</div>
+          </div>
+        </section>
+
+        <section class="closing" id="closing">
+          <div class="closing-wrap">
+            <div class="closing-copy parallax" data-parallax="0.16">
+              <div class="closing-copy-inner">
+                <h2 class="closing-title" data-reveal="up" data-delay="70">
+                  Build with <span class="closing-gradient">Intelligence</span>.
+                </h2>
+                <p class="closing-desc" data-reveal="up" data-delay="140">
+                  A future-facing interface: engineered for emotion, precision, and speed.
+                </p>
+                <div class="closing-badges" data-reveal="up" data-delay="210">
+                  <span class="badge">Motion</span>
+                  <span class="badge">Light</span>
+                  <span class="badge">Depth</span>
+                </div>
+                <div class="closing-actions" data-reveal="up" data-delay="280">
+                  <button class="btn btn-primary" type="button" id="btnRewind">
+                    Replay Opening
+                  </button>
+                  <button class="btn btn-ghost" type="button" id="btnFocus">Focus the Signal</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="closing-terminal parallax" data-parallax="0.08">
+              <div class="terminal" data-reveal="right" data-delay="100">
+                <div class="terminal-head">
+                  <span class="dot dot--r"></span>
+                  <span class="dot dot--y"></span>
+                  <span class="dot dot--g"></span>
+                  <span class="terminal-title">AI Console</span>
+                </div>
+                <div class="terminal-body" id="terminalBody">
+                  <div class="line"><span class="prompt">&gt;</span> Booting light field...</div>
+                  <div class="line"><span class="prompt">&gt;</span> Syncing particles...</div>
+                  <div class="line line--glow"><span class="prompt">&gt;</span> Ready.</div>
+                </div>
+              </div>
+
+              <div class="ticker" aria-hidden="true">
+                  <div class="ticker-track" id="tickerTrack">
+                    <span>AI 是未来</span>
+                    <span>AI 是未来</span>
+                    <span>AI 是未来</span>
+                    <span>AI 是未来</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer" data-reveal="up" data-delay="60">
+        <span>Made with HTML + CSS + JS • Canvas FX • requestAnimationFrame</span>
+      </footer>
+    </div>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050611" />
+    <title>AI is the Future</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Visual layer (canvas + glow) -->
+    <div class="fx-root" aria-hidden="true">
+      <canvas id="fx-canvas"></canvas>
+      <div class="bg-orb orb--a"></div>
+      <div class="bg-orb orb--b"></div>
+      <div class="bg-orb orb--c"></div>
+      <div class="bg-noise"></div>
+      <div class="scanlines"></div>
+    </div>
+
+    <div class="app">
+      <header class="top-nav" data-reveal="up">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <span class="brand-name">AI SIGNAL</span>
+        </div>
+        <div class="nav-actions">
+          <button class="nav-link" type="button" data-scroll-to="#showcase">Modules</button>
+          <button class="nav-link" type="button" data-scroll-to="#closing">Manifesto</button>
+        </div>
+      </header>
+
+      <main>
+        <!-- 1) Hero -->
+        <section class="hero" id="top">
+          <div class="hero-grid">
+            <div class="parallax parallax--left" data-parallax="0.18">
+              <div class="hero-left">
+                <p class="eyebrow" data-reveal="up" data-delay="60">Neural-grade presence</p>
+                <h1 class="hero-title" data-reveal="up" data-delay="120">
+                  <span class="title-line">AI is the</span>
+                  <span class="title-line title-gradient">Future</span>
+                </h1>
+                <p class="hero-subtitle" data-reveal="up" data-delay="190">
+                  A cinematic experience powered by particles, light fields, and smooth motion.
+                </p>
+
+                <div class="hero-cta" data-reveal="up" data-delay="250">
+                  <button class="btn btn-primary" type="button" id="btnPulse">Begin the Pulse</button>
+                  <a class="btn btn-ghost" href="#showcase">Explore</a>
+                </div>
+
+                <div class="hero-metrics" id="metrics" data-reveal="up" data-delay="320">
+                  <div class="metric" data-metric data-from="0" data-count="98" data-suffix="%">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Coherence</div>
+                  </div>
+                  <div class="metric" data-metric data-from="0" data-count="2400" data-suffix="ms">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Latency Budget</div>
+                  </div>
+                  <div class="metric" data-metric data-from="0" data-count="60" data-suffix="fps">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Target Frames</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="parallax parallax--right" data-parallax="0.10">
+              <div class="hero-right">
+                <div class="hero-panel" data-reveal="right" data-delay="140">
+                  <div class="panel-top">
+                    <span class="chip">Realtime</span>
+                    <span class="chip chip--alt">Light Field</span>
+                  </div>
+
+                  <div class="panel-visual">
+                    <div class="orbital" aria-hidden="true">
+                      <div class="ring ring--1"></div>
+                      <div class="ring ring--2"></div>
+                      <div class="ring ring--3"></div>
+                      <div class="core-glow"></div>
+                    </div>
+
+                    <div class="panel-caption">
+                      <div class="caption-title">Move to Bend the Signal</div>
+                      <div class="caption-sub">Mouse repulsion + glow response</div>
+                    </div>
+                  </div>
+
+                  <div class="panel-bottom">
+                    <div class="meter">
+                      <div class="meter-bar" id="meterBar"></div>
+                    </div>
+                    <div class="meter-meta">
+                      <span class="meter-text" id="meterText">Signal: 0</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hero-float" aria-hidden="true">
+                  <div class="float-card float-card--a"></div>
+                  <div class="float-card float-card--b"></div>
+                  <div class="float-card float-card--c"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2) Showcase -->
+        <section class="showcase" id="showcase">
+          <div class="section-head" data-reveal="up" data-delay="60">
+            <h2 class="section-title">Dynamic Modules</h2>
+            <p class="section-desc">
+              Glass layers with depth, parallax, smooth reveals, and micro interactions.
+            </p>
+          </div>
+
+          <div class="card-grid" role="list">
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="110">
+              <div class="card-glow"></div>
+              <div class="card-icon">01</div>
+              <h3>Neural Deck</h3>
+              <p>Premium gradients, soft shadows, and fade + translate motion design.</p>
+              <div class="card-footer">
+                <span class="tag">Fade + Translate</span>
+                <span class="tag tag--blue">Depth</span>
+              </div>
+            </article>
+
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="170">
+              <div class="card-glow"></div>
+              <div class="card-icon">02</div>
+              <h3>Particle Lattice</h3>
+              <p>
+                A canvas field that swarms gently, repels from the cursor, and connects in motion.
+              </p>
+              <div class="card-footer">
+                <span class="tag">Canvas FX</span>
+                <span class="tag tag--blue">Additive Glow</span>
+              </div>
+            </article>
+
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="230">
+              <div class="card-glow"></div>
+              <div class="card-icon">03</div>
+              <h3>Motion Orbits</h3>
+              <p>Subtle orbital rings that feel alive, tuned for silky 60fps-like smoothness.</p>
+              <div class="card-footer">
+                <span class="tag">rAF Loop</span>
+                <span class="tag tag--blue">Micro-tilt</span>
+              </div>
+            </article>
+
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="290">
+              <div class="card-glow"></div>
+              <div class="card-icon">04</div>
+              <h3>Temporal Contrast</h3>
+              <p>Scanlines, noise texture, and light-field bloom for an expensive sci-fi finish.</p>
+              <div class="card-footer">
+                <span class="tag">Texture</span>
+                <span class="tag tag--blue">Scanlines</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="floating-strip parallax" data-parallax="0.12" aria-hidden="true">
+            <div class="strip-item">VECTOR SIGNAL</div>
+            <div class="strip-item">LIGHT FIELD</div>
+            <div class="strip-item">NEURAL GLASS</div>
+            <div class="strip-item">FUTURE INTERFACE</div>
+          </div>
+        </section>
+
+        <!-- 3) Closing -->
+        <section class="closing" id="closing">
+          <div class="closing-wrap">
+            <div class="closing-copy parallax" data-parallax="0.16">
+              <div class="closing-copy-inner">
+                <h2 class="closing-title" data-reveal="up" data-delay="70">
+                  Build with <span class="closing-gradient">Intelligence</span>.
+                </h2>
+                <p class="closing-desc" data-reveal="up" data-delay="140">
+                  A future-facing interface: engineered for emotion, precision, and speed.
+                </p>
+                <div class="closing-badges" data-reveal="up" data-delay="210">
+                  <span class="badge">Motion</span>
+                  <span class="badge">Light</span>
+                  <span class="badge">Depth</span>
+                </div>
+                <div class="closing-actions" data-reveal="up" data-delay="280">
+                  <button class="btn btn-primary" type="button" id="btnRewind">
+                    Replay Opening
+                  </button>
+                  <button class="btn btn-ghost" type="button" id="btnFocus">Focus the Signal</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="closing-terminal parallax" data-parallax="0.08">
+              <div class="terminal" data-reveal="right" data-delay="100">
+                <div class="terminal-head">
+                  <span class="dot dot--r"></span>
+                  <span class="dot dot--y"></span>
+                  <span class="dot dot--g"></span>
+                  <span class="terminal-title">AI Console</span>
+                </div>
+                <div class="terminal-body" id="terminalBody">
+                  <div class="line"><span class="prompt">&gt;</span> Booting light field...</div>
+                  <div class="line"><span class="prompt">&gt;</span> Syncing particles...</div>
+                  <div class="line line--glow"><span class="prompt">&gt;</span> Ready.</div>
+                </div>
+              </div>
+
+              <div class="ticker" aria-hidden="true">
+                <div class="ticker-track" id="tickerTrack">
+                  <span>AI IS THE FUTURE</span>
+                  <span>AI IS THE FUTURE</span>
+                  <span>AI IS THE FUTURE</span>
+                  <span>AI IS THE FUTURE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer" data-reveal="up" data-delay="60">
+        <span>Made with HTML + CSS + JS • Canvas FX • requestAnimationFrame</span>
+      </footer>
+    </div>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050611" />
+    <title>AI is the Future</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Visual layer (canvas + glow) -->
+    <div class="fx-root" aria-hidden="true">
+      <canvas id="fx-canvas"></canvas>
+      <div class="bg-orb orb--a"></div>
+      <div class="bg-orb orb--b"></div>
+      <div class="bg-orb orb--c"></div>
+      <div class="bg-noise"></div>
+      <div class="scanlines"></div>
+    </div>
+
+    <div class="app">
+      <header class="top-nav" data-reveal="up">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <span class="brand-name">AI SIGNAL</span>
+        </div>
+        <div class="nav-actions">
+          <button class="nav-link" type="button" data-scroll-to="#showcase">Modules</button>
+          <button class="nav-link" type="button" data-scroll-to="#closing">Manifesto</button>
+        </div>
+      </header>
+
+      <main>
+        <!-- 1) Hero -->
+        <section class="hero" id="top">
+          <div class="hero-grid">
+            <div class="parallax parallax--left" data-parallax="0.18">
+              <div class="hero-left">
+                <p class="eyebrow" data-reveal="up" data-delay="60">Neural-grade presence</p>
+                <h1 class="hero-title" data-reveal="up" data-delay="120">
+                  <span class="title-line">AI is the</span>
+                  <span class="title-line title-gradient">Future</span>
+                </h1>
+                <p class="hero-subtitle" data-reveal="up" data-delay="190">
+                  A cinematic experience powered by particles, light fields, and smooth motion.
+                </p>
+
+                <div class="hero-cta" data-reveal="up" data-delay="250">
+                  <button class="btn btn-primary" type="button" id="btnPulse">Begin the Pulse</button>
+                  <a class="btn btn-ghost" href="#showcase">Explore</a>
+                </div>
+
+                <div class="hero-metrics" id="metrics" data-reveal="up" data-delay="320">
+                  <div class="metric" data-metric data-from="0" data-count="98" data-suffix="%">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Coherence</div>
+                  </div>
+                  <div class="metric" data-metric data-from="0" data-count="2400" data-suffix="ms">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Latency Budget</div>
+                  </div>
+                  <div class="metric" data-metric data-from="0" data-count="60" data-suffix="fps">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Target Frames</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="parallax parallax--right" data-parallax="0.10">
+              <div class="hero-right">
+                <div class="hero-panel" data-reveal="right" data-delay="140">
+                  <div class="panel-top">
+                    <span class="chip">Realtime</span>
+                    <span class="chip chip--alt">Light Field</span>
+                  </div>
+
+                  <div class="panel-visual">
+                    <div class="orbital" aria-hidden="true">
+                      <div class="ring ring--1"></div>
+                      <div class="ring ring--2"></div>
+                      <div class="ring ring--3"></div>
+                      <div class="core-glow"></div>
+                    </div>
+
+                    <div class="panel-caption">
+                      <div class="caption-title">Move to Bend the Signal</div>
+                      <div class="caption-sub">Mouse repulsion + glow response</div>
+                    </div>
+                  </div>
+
+                  <div class="panel-bottom">
+                    <div class="meter">
+                      <div class="meter-bar" id="meterBar"></div>
+                    </div>
+                    <div class="meter-meta">
+                      <span class="meter-text" id="meterText">Signal: 0</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hero-float" aria-hidden="true">
+                  <div class="float-card float-card--a"></div>
+                  <div class="float-card float-card--b"></div>
+                  <div class="float-card float-card--c"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2) Showcase -->
+        <section class="showcase" id="showcase">
+          <div class="section-head" data-reveal="up" data-delay="60">
+            <h2 class="section-title">Dynamic Modules</h2>
+            <p class="section-desc">
+              Glass layers with depth, parallax, smooth reveals, and micro interactions.
+            </p>
+          </div>
+
+          <div class="card-grid" role="list">
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="110">
+              <div class="card-glow"></div>
+              <div class="card-icon">01</div>
+              <h3>Neural Deck</h3>
+              <p>Premium gradients, soft shadows, and fade + translate motion design.</p>
+              <div class="card-footer">
+                <span class="tag">Fade + Translate</span>
+                <span class="tag tag--blue">Depth</span>
+              </div>
+            </article>
+
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="170">
+              <div class="card-glow"></div>
+              <div class="card-icon">02</div>
+              <h3>Particle Lattice</h3>
+              <p>
+                A canvas field that swarms gently, repels from the cursor, and connects in motion.
+              </p>
+              <div class="card-footer">
+                <span class="tag">Canvas FX</span>
+                <span class="tag tag--blue">Additive Glow</span>
+              </div>
+            </article>
+
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="230">
+              <div class="card-glow"></div>
+              <div class="card-icon">03</div>
+              <h3>Motion Orbits</h3>
+              <p>Subtle orbital rings that feel alive, tuned for silky 60fps-like smoothness.</p>
+              <div class="card-footer">
+                <span class="tag">rAF Loop</span>
+                <span class="tag tag--blue">Micro-tilt</span>
+              </div>
+            </article>
+
+            <article class="glass-card" data-card role="listitem" data-reveal="up" data-delay="290">
+              <div class="card-glow"></div>
+              <div class="card-icon">04</div>
+              <h3>Temporal Contrast</h3>
+              <p>Scanlines, noise texture, and light-field bloom for an expensive sci-fi finish.</p>
+              <div class="card-footer">
+                <span class="tag">Texture</span>
+                <span class="tag tag--blue">Scanlines</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="floating-strip parallax" data-parallax="0.12" aria-hidden="true">
+            <div class="strip-item">VECTOR SIGNAL</div>
+            <div class="strip-item">LIGHT FIELD</div>
+            <div class="strip-item">NEURAL GLASS</div>
+            <div class="strip-item">FUTURE INTERFACE</div>
+          </div>
+        </section>
+
+        <!-- 3) Closing -->
+        <section class="closing" id="closing">
+          <div class="closing-wrap">
+            <div class="closing-copy parallax" data-parallax="0.16">
+              <div class="closing-copy-inner">
+                <h2 class="closing-title" data-reveal="up" data-delay="70">
+                  Build with <span class="closing-gradient">Intelligence</span>.
+                </h2>
+                <p class="closing-desc" data-reveal="up" data-delay="140">
+                  A future-facing interface: engineered for emotion, precision, and speed.
+                </p>
+                <div class="closing-badges" data-reveal="up" data-delay="210">
+                  <span class="badge">Motion</span>
+                  <span class="badge">Light</span>
+                  <span class="badge">Depth</span>
+                </div>
+                <div class="closing-actions" data-reveal="up" data-delay="280">
+                  <button class="btn btn-primary" type="button" id="btnRewind">Replay Opening</button>
+                  <button class="btn btn-ghost" type="button" id="btnFocus">Focus the Signal</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="closing-terminal parallax" data-parallax="0.08">
+              <div class="terminal" data-reveal="right" data-delay="100">
+                <div class="terminal-head">
+                  <span class="dot dot--r"></span>
+                  <span class="dot dot--y"></span>
+                  <span class="dot dot--g"></span>
+                  <span class="terminal-title">AI Console</span>
+                </div>
+                <div class="terminal-body" id="terminalBody">
+                  <div class="line"><span class="prompt">&gt;</span> Booting light field...</div>
+                  <div class="line"><span class="prompt">&gt;</span> Syncing particles...</div>
+                  <div class="line line--glow"><span class="prompt">&gt;</span> Ready.</div>
+                </div>
+              </div>
+
+              <div class="ticker" aria-hidden="true">
+                <div class="ticker-track" id="tickerTrack">
+                  <span>AI IS THE FUTURE</span>
+                  <span>AI IS THE FUTURE</span>
+                  <span>AI IS THE FUTURE</span>
+                  <span>AI IS THE FUTURE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer" data-reveal="up" data-delay="60">
+        <span>Made with HTML + CSS + JS • Canvas FX • requestAnimationFrame</span>
+      </footer>
+    </div>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
+
